@@ -11,21 +11,23 @@ const ContactsList = () => {
   const disputch = useDispatch()
 
   return (
-    <ul className={s.contactList}>
-      {contacts.map(({ id, name, number }) => (
-        <li className={s.item} key={id}>
-          <p>
-            {name}: {number}
-          </p>
-          <Button
-            onClick={() => disputch(contactDelete(id))}
-            text="Delete"
-            id="delete"
-            type="button"
-          />
-        </li>
-      ))}
-    </ul>
+    <div className={s.contactsWrapper}>
+      <ul className={s.contactList}>
+        {contacts.map(({ id, name, number }) => (
+          <li className={s.item} key={id}>
+            <p>
+              {name}: {number}
+            </p>
+            <Button
+              onClick={() => disputch(contactDelete(id))}
+              text="Delete"
+              id="delete"
+              type="button"
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
